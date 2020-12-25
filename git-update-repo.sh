@@ -1,6 +1,12 @@
 #!/usr/bin/bash
 
-function update_my_scripts {
+function git_update_fun {
+git add .
+git commit -m "new changes"
+git push origin main
+}
+
+function update_my_scripts_fun {
 printf '\nmy_scripts repo : \n\n'
 cd 
 cd my_scripts
@@ -10,9 +16,7 @@ if [[ `git status --porcelain` ]]; then
   git status	
   read -p 'add, commit and push to main? (Y/N) ' confirm && [[ $confirm == [yY] ]]
   if [[ "$confirm" == [yY] ]]; then
-  git add .
-  git commit -m "new changes"
-  git push origin main
+  git_update_fun
   printf '\n------------\nUpdate complete for my_scripts repo\n\n'
   else echo 'git update cancelled for my_scripts repo'
   fi	
@@ -23,5 +27,5 @@ fi
 
 }
 
-update_my_scripts
+update_my_scripts_fun
 
