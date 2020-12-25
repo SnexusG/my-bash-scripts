@@ -8,8 +8,7 @@ git push origin main
 
 function update_my_scripts_fun {
 printf '\nmy_scripts repo : \n\n'
-cd 
-cd my_scripts
+cd; cd my_scripts
 if [[ `git status --porcelain` ]]; then
   # Changes
   printf 'changes in local repo : \n\n'
