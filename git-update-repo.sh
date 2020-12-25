@@ -8,12 +8,12 @@ if [[ `git status --porcelain` ]]; then
   # Changes
   printf 'changes in local repo : \n\n'
   git status	
-  read -p 'add, commit and push to main?' confirm && [[ $confirm == [yY] ]]
+  read -p 'add, commit and push to main? (Y/N) ' confirm && [[ $confirm == [yY] ]]
   if [[ "$confirm" == [yY] ]]; then
   git add .
   git commit -m "new changes"
   git push origin main
-  printf '\n------------\nUpdate complete\n\n'
+  printf '\n------------\nUpdate complete for my_scripts repo\n\n'
   else echo 'git update cancelled for my_scripts repo'
   fi	
 else
