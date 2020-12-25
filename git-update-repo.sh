@@ -27,5 +27,26 @@ fi
 
 }
 
-update_my_scripts_fun
+function update_comp_coding_res_fun {
+printf '\nCompetitive-Coding-Resource repo : \n\n'
+cd; cd Competitive\ Coding/; cd Competitive-Coding-Resources/;
+if [[ `git status --porcelain` ]]; then
+# Changes
+printf 'changes in local repo : \n\n'
+git status	
+read -p 'add, commit and push to main? (Y/N) ' confirm && [[ $confirm == [yY] ]]
+if [[ "$confirm" == [yY] ]]; then
+git add .
+git commit -m "new changes"
+git push origin master && printf '\n------------\nUpdate complete for Competitive-Coding-Resources repo\n\n'
+else echo 'git update cancelled for Competitive-Coding-Resources repo'
+fi
+else 
+# No Changes
+echo 'no changes in local repo'
+fi
+}
 
+update_my_scripts_fun
+clear
+update_comp_coding_res_fun
