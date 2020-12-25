@@ -17,6 +17,7 @@ if [[ `git status --porcelain` ]]; then
   read -p 'add, commit and push to main? (Y/N) ' confirm && [[ $confirm == [yY] ]]
   if [[ "$confirm" == [yY] ]]; then
   git_update_fun
+  clear
   printf '\n------------\nUpdate complete for my_scripts repo\n\n'
   else echo 'git update cancelled for my_scripts repo'
   fi	
@@ -48,5 +49,4 @@ fi
 }
 
 update_my_scripts_fun
-clear
 update_comp_coding_res_fun
