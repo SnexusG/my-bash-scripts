@@ -10,6 +10,8 @@ cd; cd Pictures; rm -rf *;
 cd; cd Videos; rm -rf *;
 #empty trash
 rm -rf ~/.local/share/Trash/*
+#empty temp
+cd; cd temp; rm -rf *;
 }
 
 arg1=$1
