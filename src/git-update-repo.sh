@@ -3,7 +3,7 @@
 function git_update_fun {
 git add .
 git commit -m "new changes"
-git push origin main
+git push origin main || ( git pull; git push origin main; )
 }
 
 function update_my_scripts_fun {
