@@ -22,7 +22,13 @@ if [[ `git status --porcelain` ]]; then
   fi	
 else
   # No changes
-  echo 'no changes in local repo'
+  git status
+  read -p 'nothing to commit, do you want to push? (Y/N) ' confirm && [[ $confirm == [yY] ]]
+  if [[ "$confirm" == [yY ]]; then
+  git push origin main
+  else
+  echo 'git update cancelled for my_scripts repo'
+  fi
 fi
 
 }
