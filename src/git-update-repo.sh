@@ -47,5 +47,10 @@ echo 'no changes in local repo'
 fi
 }
 
+arg1=$1
+if [[ "$arg1" == "-h" || "$arg1" == "-help" ]];
+then printf "\ndoes the following operations on comp coding and my_scripts repositories \n\n"
+printf "\ngit add. , git commit and git push\n\n"
+fi;
 update_my_scripts_fun
 update_comp_coding_res_fun
