@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 cat > script.py << 'END_SCRIPT'
+#put python code here
 import os
 path = os.path.abspath(os.getcwd()) + "/Downloads"
 curr_dir = os.listdir(path)
