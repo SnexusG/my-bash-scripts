@@ -1,12 +1,15 @@
 #!/usr/bin/bash
 
+arg1=$1
+num_args=$#
 function git_update_fun {
 git add .
-if [[ "$#" == "0" ]]; then
+if [[ "$num_args" == "0" ]]; then
 git commit -m "new changes"
+echo 'commit with message new changes'
 else 
-echo "commit with message $1"
-git commit -m "$1"
+echo "commit with message $arg1"
+git commit -m "$arg1"
 fi
 git push origin main || ( git pull; git push origin main; )
 }
@@ -57,10 +60,10 @@ echo 'no changes in local repo'
 fi
 }
 
-arg1=$1
 if [[ "$arg1" == "-h" || "$arg1" == "-help" ]];
 then printf "\ndoes the following operations on comp coding and my_scripts repositories \n\n"
-printf "\ngit add. , git commit and git push\n\n"
+printf "git add. , git commit and git push\n\n"
+exit 0
 fi;
 update_my_scripts_fun
 update_comp_coding_res_fun
