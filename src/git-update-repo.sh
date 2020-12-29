@@ -2,7 +2,11 @@
 
 function git_update_fun {
 git add .
+if [[ "$#" == "0" ]]; then
 git commit -m "new changes"
+else 
+git commit -m "$1"
+fi
 git push origin main || ( git pull; git push origin main; )
 }
 
