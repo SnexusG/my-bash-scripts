@@ -5,6 +5,7 @@ git add .
 if [[ "$#" == "0" ]]; then
 git commit -m "new changes"
 else 
+echo "commit with message $1"
 git commit -m "$1"
 fi
 git push origin main || ( git pull; git push origin main; )
