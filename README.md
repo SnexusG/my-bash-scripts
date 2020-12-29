@@ -1,5 +1,5 @@
 # my-bash-scripts
-## bash scripts i use for automation to make my workflow easier and practising bash shell scripting
+## bash scripts i use for automation to make my workflow easier and practice bash shell scripting
 
 ## script descriptions : 
 * comp-coding : launches vscode with my comp-coding directory and runs a python script to delete unncessary files
