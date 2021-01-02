@@ -1,17 +1,36 @@
 #!/usr/bin/bash
 
+
+function check_empty_fun {
+clear;
+numFiles=$(ls | wc -l)
+if [[ "$numFiles" -ne 0 ]]; then
+ls
+read -p "Delete the following files from $(pwd) ? (Y/N) " confirm
+if [[ "$confirm" == [yY] ]]; then
+rm -rf *
+fi
+fi
+}
+
 function delete_fun {
 echo 'Deleting from downloads,pictures,videos and trash...';	
 #delete all files from downloads dir
-cd; cd Downloads; rm -rf *;
+cd; cd Downloads; 
+check_empty_fun
+rm -rf *;
+
 #delete all files from Pictures dir
-cd; cd Pictures; rm -rf *;
+cd; cd Pictures;
+check_empty_fun;
 #delete all videos from Videos dir
-cd; cd Videos; rm -rf *;
+cd; cd Videos; 
+check_empty_fun;
 #empty trash
 rm -rf ~/.local/share/Trash/*
 #empty temp
-cd; cd temp; rm -rf *;
+cd; cd temp; 
+check_empty_fun;
 }
 
 arg1=$1
