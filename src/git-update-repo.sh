@@ -60,6 +60,7 @@ echo 'no changes in local repo'
 fi
 }
 
+
 if [[ "$arg1" == "-h" || "$arg1" == "-help" ]];
 then printf "\ndoes the following operations on comp coding and my_scripts repositories \n\n"
 printf "git add. , git commit and git push\n\n"
