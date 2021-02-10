@@ -1,10 +1,11 @@
 #!/usr/bin/bash
 
-
+mkfifo wakemeup
 while true;
-do
+do	
 DIR="/home/swapnil-gore/others/wallpapers"
 PIC=$(ls $DIR/* | shuf -n1)
 gsettings set org.gnome.desktop.background picture-uri "file://$PIC"
-sleep 300
+read -n1 -t300 < wakemeup 
 done
+
