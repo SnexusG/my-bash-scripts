@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-mkfifo wakemeup
 while true;
 do	
 DIR="/home/swapnil-gore/others/wallpapers"
